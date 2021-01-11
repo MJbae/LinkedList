@@ -15,8 +15,8 @@ public class LinkedList {
             return _title;
         }
 
-        public void set_title(String _title) {
-            this._title = _title;
+        public void set_title(String title) {
+            this._title = title;
         }
     }
 
