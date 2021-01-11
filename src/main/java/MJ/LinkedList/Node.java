@@ -14,4 +14,31 @@ public class Node {
     public String get_title() {
         return _title;
     }
+
+    public void add(String title){
+        Node end = new Node(title);
+        Node now = this;
+        while(now.next != null){
+            now = now.next;
+        }
+        now.next = end;
+    }
+
+    public void printAll(){
+        Node now = this;
+        while(now.next != null){
+            System.out.println(now.get_title());
+            now = now.next;
+        }
+        System.out.println(now.get_title());
+    }
+
+    public static void main(String[] args){
+        Node start = new Node("시작이다");
+        start.add("내 꿈을 위한");
+        start.add("여행");
+        start.add("피카츄");
+
+        start.printAll();
+    }
 }
