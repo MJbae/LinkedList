@@ -24,6 +24,14 @@ public class Node {
         now.next = end;
     }
 
+    public void delete(String title){
+        Node now = this;
+        while(now.next != null){
+            if(now.next.get_title() == title) now.next = now.next.next;
+            else now = now.next;
+        }
+    }
+
     public void printAll(){
         Node now = this;
         while(now.next != null){
@@ -38,6 +46,9 @@ public class Node {
         start.add("내 꿈을 위한");
         start.add("여행");
         start.add("피카츄");
+
+        start.printAll();
+        start.delete("여행");
 
         start.printAll();
     }
