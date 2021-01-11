@@ -13,16 +13,28 @@ public class VideoLinkedList{
     static class Node {
         private String _title;
         private String _id;
-        private int _runningTime;
+        private String _runningTime;
         public Node next = null;
 
         Node() {
             set_id();
             set_runningTime();
         }
+        Node(String id, String runningTime) {
+            set_id(id);
+            set_runningTime(runningTime);
+        }
 
         public void set_id() {
-            this._id = UUID.randomUUID().toString();
+            this._id = UUID.randomUUID().toString().split("-")[1];
+        }
+
+        public void set_id(String id) {
+            this._id = id;
+        }
+
+        public void set_runningTime(String runningTime) {
+            this._runningTime = runningTime;
         }
 
         public String get_id() {
@@ -39,10 +51,11 @@ public class VideoLinkedList{
 
         public void set_runningTime() {
             Random random = new Random();
-            this._runningTime = random.nextInt(14) + 1;
+            int validNum = random.nextInt(14) + 1;
+            this._runningTime = Integer.toString(validNum);
         }
 
-        public int get_runningTime() {
+        public String get_runningTime() {
             return _runningTime;
         }
     }
@@ -72,11 +85,11 @@ public class VideoLinkedList{
     public void printAll(){
         Node now = header.next;
         while (now.next != null) {
-            String contents = now.get_title() + "(" + now.get_id() + ") : " + now.get_runningTime();
+            String contents = now.get_title() + "(" + now.get_id() + "):" + now.get_runningTime();
             System.out.println(contents);
             now = now.next;
         }
-        String contents = now.get_title() + "(" + now.get_id() + ") : " + now.get_runningTime();
+        String contents = now.get_title() + "(" + now.get_id() + "):" + now.get_runningTime();
         System.out.println(contents);
     }
 
