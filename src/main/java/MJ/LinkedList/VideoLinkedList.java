@@ -1,8 +1,6 @@
 package MJ.LinkedList;
 
-import java.util.HashMap;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.UUID;
 
 public class VideoLinkedList {

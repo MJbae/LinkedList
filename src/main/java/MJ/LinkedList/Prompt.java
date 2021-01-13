@@ -17,7 +17,7 @@ public class Prompt {
 
         VideoLinkedList testList = new VideoLinkedList();
         Scanner scanner = new Scanner(System.in);
-        System.out.print(">");
+        System.out.print("> ");
         String[] prompt = scanner.nextLine().split(" ");
 
         String inputID = prompt[1];
